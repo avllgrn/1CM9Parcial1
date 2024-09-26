@@ -7,13 +7,22 @@ def convierteGradosARadianes(grados):
 def convierteRadianesAGrados(radianes):
     return radianes*180/math.pi
 
+def seno(x):
+    return math.sin(convierteGradosARadianes(x))
+
+def coseno(x):
+    return math.cos(convierteGradosARadianes(x))
+
+def tangente(x):
+    return math.tan(convierteGradosARadianes(x))
+
 if __name__ == '__main__':
     os.system('cls')
 
     xGrados = float(input('Ingresa grados '))    
     xRadianes = convierteGradosARadianes(xGrados)
-    print(f'{xGrados}° = {xRadianes} Rads')
 
-    xRadianes = float(input('Ingresa radianes '))
-    xGrados = convierteRadianesAGrados(xRadianes)
-    print(f'{xRadianes}° = {xGrados} Rads')
+    print(f'{xGrados}° = {xRadianes} Rads')
+    print(f'seno({xGrados}) = {seno(xGrados)}')
+    print(f'coseno({xGrados}) = {coseno(xGrados)}')
+    print(f'tangente({xGrados}) = {tangente(xGrados)}')
