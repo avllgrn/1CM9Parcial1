@@ -1,20 +1,22 @@
 import os
 
-def areaCuadro(lado):
-    a = lado*lado
+def areaRectangulo(base, altura):
+    a = base * altura
     return a
 
-def perimetroCuadro(lado):
-    p = 4*lado
+def perimetroRectangulo(base, altura):
+    p = 2*base + 2*altura
     return p
 
 if __name__ == '__main__':
     os.system('cls')
 
-    lado = int(input('Ingresa lado '))
-    area = areaCuadro(lado)
-    perimetro = perimetroCuadro(lado)
+    base = float(input('Ingresa base '))
+    altura = float(input('Ingresa altura '))
+    area = areaRectangulo(base, altura)
+    perimetro = perimetroRectangulo(base, altura)
 
-    print(f'lado = {lado}')
+    print(f'base = {base}')
+    print(f'altura = {altura}')
     print(f'area = {area}')
     print(f'perimetro = {perimetro}')
