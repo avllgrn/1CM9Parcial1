@@ -1,13 +1,20 @@
 import os
 
-def suma(x, y):
-    z = x+y
-    return z
+def areaCuadro(lado):
+    a = lado*lado
+    return a
+
+def perimetroCuadro(lado):
+    p = 4*lado
+    return p
 
 if __name__ == '__main__':
     os.system('cls')
-    
-    a = int(input('Ingresa un entero '))
-    b = int(input('Ingresa otro entero '))
-    c = suma(a, b)
-    print(f'{a} + {b} = {c}')
+
+    lado = int(input('Ingresa lado '))
+    area = areaCuadro(lado)
+    perimetro = perimetroCuadro(lado)
+
+    print(f'lado = {lado}')
+    print(f'area = {area}')
+    print(f'perimetro = {perimetro}')
