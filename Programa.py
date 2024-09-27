@@ -1,28 +1,65 @@
 import os
-import math
 
-def convierteGradosARadianes(grados):
-    return grados*math.pi/180
+def esCaracterNumerico(c):
+    ascii = ord(c)
+    if ascii>=48 and ascii<=57:
+        return True
+    else:
+        return False
 
-def convierteRadianesAGrados(radianes):
-    return radianes*180/math.pi
+def esCaracterMayuscula(c):
+    ascii = ord(c)
+    if ascii>=65 and ascii<=90:
+        return True
+    else:
+        return False
 
-def seno(x):
-    return math.sin(convierteGradosARadianes(x))
+def esCaracterMinuscula(c):
+    ascii = ord(c)
+    if ascii>=97 and ascii<=122:
+        return True
+    else:
+        return False
 
-def coseno(x):
-    return math.cos(convierteGradosARadianes(x))
+def esCaracterLetra(c):
+    if esCaracterMayuscula(c) or esCaracterMinuscula(c):
+        return True
+    else:
+        return False
 
-def tangente(x):
-    return math.tan(convierteGradosARadianes(x))
+def esCaracterEspecial(c):
+    if not esCaracterNumerico(c) and not esCaracterLetra(c):
+        return True
+    else:
+        return False
 
 if __name__ == '__main__':
     os.system('cls')
 
-    xGrados = float(input('Ingresa grados '))    
-    xRadianes = convierteGradosARadianes(xGrados)
+    caracter = input('Ingresa un solo caracter ')
 
-    print(f'{xGrados}° = {xRadianes} Rads')
-    print(f'seno({xGrados}) = {seno(xGrados)}')
-    print(f'coseno({xGrados}) = {coseno(xGrados)}')
-    print(f'tangente({xGrados}) = {tangente(xGrados)}')
+    if esCaracterNumerico(caracter):
+        print(f'{caracter} es numérico.')
+    else:
+        print(f'{caracter} no es numérico.')
+
+    if esCaracterMayuscula(caracter):
+        print(f'{caracter} es mayúscula.')
+    else:
+        print(f'{caracter} no es mayúscula.')
+
+    if esCaracterMinuscula(caracter):
+        print(f'{caracter} es minúscula.')
+    else:
+        print(f'{caracter} no es minúscula.')
+
+    if esCaracterLetra(caracter):
+        print(f'{caracter} es letra.')
+    else:
+        print(f'{caracter} no es letra.')
+
+    if esCaracterEspecial(caracter):
+        print(f'{caracter} es caracter especial.')
+    else:
+        print(f'{caracter} no es caracter especial.')
+
