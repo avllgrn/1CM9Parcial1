@@ -1,48 +1,41 @@
 import os
+import math
 
-def esCaracterNumerico(c):
-    ascii = ord(c)
-    if ascii>=48 and ascii<=57:
-        return True
-    else:
-        return False
+def convierteGradosARadianes(grados):
+    return grados*math.pi/180
 
-def esCaracterMayuscula(c):
-    ascii = ord(c)
-    if ascii>=65 and ascii<=90:
-        return True
-    else:
-        return False
+def convierteRadianesAGrados(radianes):
+    return radianes*180/math.pi
 
-def esCaracterMinuscula(c):
-    ascii = ord(c)
-    if ascii>=97 and ascii<=122:
-        return True
-    else:
-        return False
+def seno(x):
+    return math.sin(convierteGradosARadianes(x))
 
-def esCaracterLetra(c):
-    if esCaracterMayuscula(c) or esCaracterMinuscula(c):
-        return True
-    else:
-        return False
+def coseno(x):
+    return math.cos(convierteGradosARadianes(x))
 
-def esCaracterEspecial(c):
-    if not esCaracterNumerico(c) and not esCaracterLetra(c):
-        return True
-    else:
-        return False
+def tangente(x):
+    return math.tan(convierteGradosARadianes(x))
 
 if __name__ == '__main__':
     os.system('cls')
 
-    caracter = input('Ingresa un solo caracter ')
+    print('1. Convertir a radianes')
+    print('2. Seno')
+    print('3. Coseno')
+    print('4. Tangente')
+    opcion = input('Ingresa tu opcion ')
 
-    if esCaracterNumerico(caracter):
-        print(f'{caracter} es numérico.')
-    elif esCaracterLetra(caracter) and esCaracterMayuscula(caracter):
-        print(f'{caracter} es letra mayúscula')
-    elif esCaracterLetra(caracter) and esCaracterMinuscula(caracter):
-        print(f'{caracter} es letra minúscula')
-    else:
-        print(f'{caracter} es caracter especial.')
+    match opcion:
+        case '1':
+            grados = float(input('Ingresa grados '))
+            radianes = convierteGradosARadianes(grados)
+            print(f'{grados}° = {radianes} rads')
+        case '2':
+            grados = float(input('Ingresa grados '))
+            print(f'seno({grados}) = {seno(grados)}')
+        case '3':
+            grados = float(input('Ingresa grados '))
+            print(f'coseno({grados}) = {coseno(grados)}')
+        case '4':
+            grados = float(input('Ingresa grados '))
+            print(f'tangente({grados}) = {tangente(grados)}')
