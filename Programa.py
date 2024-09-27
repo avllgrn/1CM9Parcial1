@@ -40,26 +40,9 @@ if __name__ == '__main__':
 
     if esCaracterNumerico(caracter):
         print(f'{caracter} es numérico.')
+    elif esCaracterLetra(caracter) and esCaracterMayuscula(caracter):
+        print(f'{caracter} es letra mayúscula')
+    elif esCaracterLetra(caracter) and esCaracterMinuscula(caracter):
+        print(f'{caracter} es letra minúscula')
     else:
-        print(f'{caracter} no es numérico.')
-
-    if esCaracterMayuscula(caracter):
-        print(f'{caracter} es mayúscula.')
-    else:
-        print(f'{caracter} no es mayúscula.')
-
-    if esCaracterMinuscula(caracter):
-        print(f'{caracter} es minúscula.')
-    else:
-        print(f'{caracter} no es minúscula.')
-
-    if esCaracterLetra(caracter):
-        print(f'{caracter} es letra.')
-    else:
-        print(f'{caracter} no es letra.')
-
-    if esCaracterEspecial(caracter):
         print(f'{caracter} es caracter especial.')
-    else:
-        print(f'{caracter} no es caracter especial.')
-
